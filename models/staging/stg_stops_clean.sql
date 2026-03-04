@@ -1,5 +1,5 @@
 SELECT
-    ARRAY_REVERSE(SPLIT(stop_id, ':'))[SAFE_OFFSET(0)] AS stop_id_clean,
-    SPLIT(parent_station, ':')[SAFE_OFFSET(1)] AS id_zdc_clean
+    safe_cast(trim(array_reverse(split(stop_id, ':'))[safe_offset(0)])AS int) AS stop_id,
+    safe_cast(trim(split(parent_station, ':')[safe_offset(1)])AS int) AS id_zdc
 FROM {{ source('UrbanMove_raw', 'stops') }}
 WHERE parent_station IS NOT NULL
