@@ -1,8 +1,3 @@
-{{ config(
-    materialized = 'table',
-    schema = 'UrbanMove'
-) }}
-
 with source as (
 
     select *
