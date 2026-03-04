@@ -1,5 +1,5 @@
 SELECT
-    date,
+    date AS date_jour,
     annee,
     mois,
     jour,
@@ -11,7 +11,7 @@ SELECT
     TRIM(type_transport) AS type_transport,
     frequence_theorique_par_heure,
     frequence_reelle_par_heure,
-    taux_service_pct
+    taux_service_pct AS taux_service,
     retard_moyen_minutes,
     incident_detecte,
     incident_type,
