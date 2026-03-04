@@ -3,6 +3,7 @@ SELECT
     TRIM(nom_ligne) AS nom_ligne,
     TRIM(mode_transport) AS mode_transport,
     TRIM(submode_transport) AS submode_transport,
+    id_operateur,
     TRIM(nom_operateur) AS nom_operateur,
     TRIM(accessibilite) AS accessibilite,
     TRIM(signaux_sonores) AS signaux_sonores,

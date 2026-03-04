@@ -20,7 +20,7 @@ cleaned as (
         trim(ID_GROUPOFLINES) as id_group_ligne,
 
         -- catégorie titre nettoyée
-        trim(CATEGORIE_TITRE) as categorie_titre,
+        trim(lower(CATEGORIE_TITRE)) as categorie_titre,
 
         -- nombre de validations
         cast(NB_VALD as int64) as nb_validations
