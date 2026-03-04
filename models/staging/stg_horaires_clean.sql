@@ -13,7 +13,6 @@ SELECT
     frequence_reelle_par_heure,
     taux_service_pct
     retard_moyen_minutes,
-    facteur_retard,
     incident_detecte,
     incident_type,
     temperature,
