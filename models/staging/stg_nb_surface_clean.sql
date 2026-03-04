@@ -17,7 +17,7 @@ cleaned as (
         JOUR as date_jour,
 
         -- identifiant group of lines
-        trim(ID_GROUPOFLINES) as id_groupoflines,
+        trim(ID_GROUPOFLINES) as id_group_ligne,
 
         -- catégorie titre nettoyée
         trim(CATEGORIE_TITRE) as categorie_titre,
@@ -36,7 +36,7 @@ cleaned as (
 
 select
     date_jour,
-    id_groupoflines,
+    id_group_ligne,
     categorie_titre,
     nb_validations
 from cleaned

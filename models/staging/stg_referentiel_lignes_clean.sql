@@ -7,8 +7,8 @@ SELECT
     TRIM(accessibilite) AS accessibilite,
     TRIM(signaux_sonores) AS signaux_sonores,
     TRIM(signaux_visuels) AS signaux_visuels,
-    TRIM(id_groupoflines) AS id_groupoflines,
-    TRIM(nom_groupoflines) AS nom_groupoflines,
+    TRIM(id_groupoflines) AS id_group_ligne,
+    TRIM(nom_groupoflines) AS nom_group_ligne,
     TRIM(air_conditionne) AS air_conditionne 
 FROM {{ source('UrbanMove_raw', 'referentiel_des_lignes') }}
 WHERE id_groupoflines IS NOT NULL
