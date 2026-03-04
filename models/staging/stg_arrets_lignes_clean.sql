@@ -5,5 +5,6 @@ SELECT
     stop_lon,
     stop_lat,
     TRIM(nom_commune) AS nom_commune,
-    code_insee
+    RIGHT(code_insee, 5) as code_insee,
+    LEFT(RIGHT(code_insee, 5), 2) as id_departement
 FROM {{ source('UrbanMove_raw', 'arrets_lignes') }}
