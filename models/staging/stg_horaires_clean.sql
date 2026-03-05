@@ -7,7 +7,7 @@ SELECT
     heure,
     TRIM(tranche_horaire) AS tranche_horaire,
     TRIM(SPLIT(ligne_id, ':')[SAFE_OFFSET(1)]) AS id_ligne,
-    TRIM(ligne_nom) as ligne_nom,
+    TRIM(ligne_nom) as nom_ligne,
     TRIM(type_transport) AS type_transport,
     frequence_theorique_par_heure,
     frequence_reelle_par_heure,

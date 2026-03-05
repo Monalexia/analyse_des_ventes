@@ -5,17 +5,23 @@ with arrets_lignes as (
 stops as (
     select *
     from {{ ref('stg_stops_clean') }}
+),
+accessibilite_gare as (
+    SELECT *
+    FROM {{ ref('stg_accessibilite_gare_clean') }}
 )
 
 select
-    a.id_stop as id_arret,
-    a.nom_stop as nom_arret,
-    s.level_id as level_accessibilite,
-    a.stop_lon as longitude,
-    a.stop_lat as latitude,
-    a.id_departement as departement,
-    a.nom_commune as commune,
+    a.id_arret,
+    a.nom_arret,
+    ag.id_niveau_accessibilite,
+    a.longitude,
+    a.latitude,
+    a.id_departement,
+    a.nom_commune,
     a.code_insee
 from arrets_lignes a
 left join stops s
-    on a.id_stop = s.id_stop
+    on a.id_arret = s.id_arret
+left join accessibilite_gare ag
+    on a.id_arret = ag.id_arret

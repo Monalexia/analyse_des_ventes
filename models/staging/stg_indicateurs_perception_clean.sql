@@ -4,7 +4,7 @@ SELECT
         ELSE TRIM(operatorname)
     END AS groupe_operateur,
 
-    TRIM(mode) AS mode,
+    TRIM(mode) AS mode_transport,
     annee,
     resultat
 
