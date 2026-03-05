@@ -1,5 +1,9 @@
 SELECT
-    TRIM(operatorname) AS id_operateur,
+    CASE
+        WHEN LOWER(TRIM(operatorname)) = 'ratp cap idf' THEN 'RATP'
+        ELSE TRIM(operatorname)
+    END AS groupe_operateur,
+
     TRIM(mode) AS mode,
     annee,
     resultat

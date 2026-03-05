@@ -11,9 +11,11 @@ cleaned as (
         cast(annee as int64) as annee,
         cast(semestre as int64) as semestre,
 
-        -- Colonnes STIF supprimées
-        -- (on ne les garde pas dans le staging final)
-        
+        -- Colonnes STIF (seront supprimées dans la table finale)
+        nullif(trim(cast(code_stif_trns as string)), '') as code_stif_trns,
+        nullif(trim(cast(code_stif_res as string)), '') as code_stif_res,
+        nullif(trim(cast(code_stif_arret as string)), '') as code_stif_arret,
+
         case
             when lower(trim(libelle_arret)) = 'inconnu' then null
             else trim(libelle_arret)
@@ -27,16 +29,10 @@ cleaned as (
             as int64
         ) as heure,
 
-        cast(pourc_validations as float64) as pourc_validations
+        cast(pourc_validations as float64) as pourcentage_validation
 
     from source
 )
 
-select
-    annee,
-    semestre,
-    id_zdc,
-    cat_jour,
-    heure,
-    pourc_validations
+select *
 from cleaned
