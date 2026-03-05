@@ -1,6 +1,6 @@
 SELECT
     TRIM(SPLIT(ID, ':')[SAFE_OFFSET(1)]) AS id_ligne,
-    TRIM(ARRAY_REVERSE(SPLIT(stop_id, ':'))[SAFE_OFFSET(0)]) AS id_stop,
+    CAST(TRIM(ARRAY_REVERSE(SPLIT(stop_id, ':'))[SAFE_OFFSET(0)])AS INT64) AS id_stop,
     TRIM(stop_name) AS nom_stop,
     stop_lon,
     stop_lat,
