@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: UrbanMove_raw
+    description: "Les données brutes de France mobilités"
+    tables:
+      - name: accessibilite_gare
+        description: "niveau d'accessibilité des gares"
+      - name: arrets_lignes
+        description: "Les données des arrêts de transport"
+      - name: horaires
+        description: "Données de retard par jour, par heure et par ligne"
+      - name: indicateurs_perception
+        description: "Note de satisfaction des usagers sur certaines lignes"
+      - name: liste_transporteurs
+        description: "Liste des différents opérateurs"
+      - name: nb_fer
+        description: "Nombre de validation de titre de transport par jour et par arrêt pour le réseau ferré"
+      - name: nb_surface
+        description: "Nombre de validation de titre de transport par jour et par ligne pour le réseau surface"
+      - name: profil_fer
+        description: "Pourcentage de validations par tranche horaire et par arrêt pour le réseau ferré"
+      - name: profil_surface
+        description: "Pourcentage de validations par tranche horaire et par ligne pour le réseau surface"
+      - name: referentiel_des_lignes
+        description: "Données détaillées sur les lignes"
+      - name: stops
+        description: "Données détaillées des arrêts mais table qui sert surtout pour faire le lien entre id_ligne et id_arrêt"
+
+

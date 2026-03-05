@@ -25,3 +25,4 @@ left join stops s
     on a.id_arret = s.id_arret
 left join accessibilite_gare ag
     on a.id_arret = ag.id_arret
+group by a.id_arret, a.nom_arret, ag.id_niveau_accessibilite, a.longitude, a.latitude, a.id_departement, a.nom_commune, a.code_insee

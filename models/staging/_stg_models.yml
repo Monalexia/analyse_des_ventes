@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: stg_accessibilite_gare_clean
+    description: "Données nettoyées du niveau d'accessibilité des gares"
+    columns:
+      - name: id_arret
+        tests:
+          - unique
+          - not_null
+  - name: stg_arrets_lignes_clean
+    description: "Données nettoyées des arrêts de transport"
+    columns:
+      - name: id_ligne
+        tests:
+          - not_null
+      - name: id_arret
+        tests:
+          - not_null
+  - name: stg_horaires_clean
+    description: "Données nettoyées de retard par jour, par heure et par ligne"
+  - name: stg_indicateurs_perception_clean
+    description: "Données nettoyées de la note de satisfaction des usagers sur certaines lignes"
+  - name: stg_liste_transporteurs_clean
+    description: "Données nettoyées de la liste des différents opérateurs"
+    columns:
+      - name: id_operateur
+        tests:
+          - unique
+          - not_null
+  - name: stg_nb_fer_clean
+    description: "Données nettoyées du nombre de validation de titre de transport par jour et par arrêt pour le réseau ferré"
+  - name: stg_nb_surface_clean
+    description: "Données nettoyées du nombre de validation de titre de transport par jour et par ligne pour le réseau surface"
+  - name: stg_profil_fer_clean
+    description: "Données nettoyées du pourcentage de validations par tranche horaire et par arrêt pour le réseau ferré"
+  - name: stg_profil_surface_clean
+    description: "Données nettoyées du pourcentage de validations par tranche horaire et par ligne pour le réseau surface"
+  - name: stg_referentiel_lignes_clean
+    description: "Données détaillées nettoyées sur les lignes"
+    columns:
+      - name: id_ligne
+        tests:
+          - unique
+          - not_null
+  - name: stg_stops_clean
+    description: "Données détaillées nettoyées des arrêts mais table qui sert surtout pour faire le lien entre id_ligne et id_arrêt"
+    columns:
+      - name: id_arret
+        tests:
+          - unique
+          - not_null
+      - name: id_zdc
+        tests:
+          - not_null

@@ -1,0 +1,127 @@
+version: 2
+
+
+models:
+  - name: dim_accessibilite_gare
+    description: "Table de dimension qui répertorie les niveaux d'accessibilité en gare"
+    columns:
+      - name: id_niveau_accessibilite
+        tests:
+          - unique
+          - not_null
+      - name: nom_niveau_accessibilite
+        tests:
+          - not_null
+  - name: dim_arrets
+    description: "Table de dimension qui répertorie les arrêts"
+    columns:
+      - name: id_arret
+        tests:
+          - unique
+          - not_null
+  - name: dim_date
+    description: "Table de dimension de dates"
+    columns:
+      - name: date_jour
+        tests:
+          - unique
+          - not_null
+  - name: dim_groupes_lignes
+    description: "Table de dimension qui répertorie les groupes de lignes"
+    columns:
+      - name: id_group_ligne
+        tests:
+          - unique
+          - not_null
+  - name: dim_lignes
+    description: "Table de dimension qui répertorie les lignes"
+    columns:
+      - name: id_ligne
+        tests:
+          - unique
+          - not_null
+  - name: dim_operateurs
+    description: "Table de dimension qui répertorie les opérateurs"
+    columns:
+      - name: id_operateur
+        tests:
+          - unique
+          - not_null
+  - name: dim_titres_transport
+    description: "Table de dimension qui répertorie les titres de transport et les catégorise"
+    columns:
+      - name: id_titre
+        tests:
+          - unique
+          - not_null
+  - name: faits_horaires
+    description: "Table de faits dans laquelle on retrouve les retards, les frréquences de passage et les incidents"
+    columns:
+      - name: date_jour
+        tests:
+          - not_null
+      - name: id_ligne
+        tests:
+          - not_null
+  - name: faits_meteo
+    description: "Table de faits dans laquelle on retrouve les conditions météo par jour"
+    columns:
+      - name: date_jour
+        tests:
+          - not_null
+  - name: faits_nb_fer
+    description: "Table de faits dans laquelle on retrouve le nombre de validation par jour par arret pour le réseau ferré"
+    columns:
+      - name: date_jour
+        tests:
+          - not_null
+      - name: id_zdc
+        tests:
+          - not_null
+  - name: faits_nb_surface
+    description: "Table de faits dans laquelle on retrouve le nombre de validation par jour par arret pour le réseau surface"
+    columns:
+      - name: date_jour
+        tests:
+          - not_null
+      - name: id_group_ligne
+        tests:
+          - not_null
+  - name: faits_perceptions
+    description: "Table de faits dans laquelle on retrouve le score sur cent attribué aux opérateurs par les usagers"
+  - name: faits_profil_fer
+    description: "Table de faits dans laquelle on retrouve le pourcentage de validation par heure pour le réseau ferré"
+    columns:
+      - name: id_zdc
+        tests:
+          - not_null
+  - name: faits_profil_surface
+    description: "Table de faits dans laquelle on retrouve le pourcentage de validation par heure pour le réseau surface"
+    columns:
+      - name: id_group_ligne
+        tests:
+          - not_null
+  - name: inter_arret_ferre
+    columns:
+      - name: id_arret
+        tests:
+          - not_null
+      - name: id_zdc
+        tests:
+          - not_null
+  - name: inter_ligne_operateur
+    columns:
+      - name: id_ligne
+        tests:
+          - not_null
+      - name: id_operateur
+        tests:
+          - not_null
+  - name: inter_lignes_arrets
+    columns:
+      - name: id_ligne
+        tests:
+          - not_null
+      - name: id_arret
+        tests:
+          - not_null
