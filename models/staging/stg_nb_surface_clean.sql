@@ -15,7 +15,13 @@ cleaned as (
         trim(ID_GROUPOFLINES) as id_group_ligne,
 
         -- catégorie titre nettoyée
-        trim(lower(CATEGORIE_TITRE)) as categorie_titre,
+        TRIM(LOWER(
+            CASE
+                WHEN TRIM(LOWER(CATEGORIE_TITRE)) IN ('forfait navigo', 'navigo') THEN 'navigo'
+                WHEN TRIM(LOWER(CATEGORIE_TITRE)) IN ('autre titre', 'autres titres', '?') THEN 'autre titre'
+                ELSE CATEGORIE_TITRE
+            END
+        )) AS nom_titre,
 
         -- nombre de validations
         cast(NB_VALD as int64) as nb_validations
@@ -32,6 +38,6 @@ cleaned as (
 select
     date_jour,
     id_group_ligne,
-    categorie_titre,
+    nom_titre,
     nb_validations
 from cleaned
