@@ -14,6 +14,8 @@ sources:
         description: "Note de satisfaction des usagers sur certaines lignes"
       - name: liste_transporteurs
         description: "Liste des différents opérateurs"
+      - name: meteo_paris
+        description: "Conditions météo par jour su r paris pour 2023 et 2024"
       - name: nb_fer
         description: "Nombre de validation de titre de transport par jour et par arrêt pour le réseau ferré"
       - name: nb_surface
