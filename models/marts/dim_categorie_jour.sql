@@ -14,3 +14,4 @@ SELECT
         ELSE 'Samedi vacances'
     END AS description
 FROM categorie_uniques
+GROUP BY cat_jour
