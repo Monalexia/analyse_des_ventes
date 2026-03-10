@@ -8,8 +8,8 @@ SELECT
         WHEN LOWER(TRIM(nom_operateur)) LIKE '%keolis%' THEN 'Keolis'
         WHEN LOWER(TRIM(nom_operateur)) LIKE '%transdev%' THEN 'Transdev'
         WHEN LOWER(TRIM(nom_operateur)) LIKE '%savac%' THEN 'Lacroix-Savac'
-        WHEN LOWER(TRIM(nom_operateur)) LIKE '%RD%' THEN 'RD'
-        WHEN LOWER(TRIM(nom_operateur)) LIKE '%Francilité%' THEN 'Francilité'
+        WHEN LOWER(TRIM(nom_operateur)) LIKE '%rd%' THEN 'RD'
+        WHEN LOWER(TRIM(nom_operateur)) LIKE '%francilité%' THEN 'Francilité'
         ELSE "Autre"
     END AS groupe_operateur,
 
