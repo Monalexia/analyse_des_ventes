@@ -19,6 +19,10 @@ models:
           - not_null
   - name: stg_horaires_clean
     description: "Données nettoyées de retard par jour, par heure et par ligne"
+    columns:
+      - name : id_ligne
+        tests:
+          - not_null
   - name: stg_indicateurs_perception_clean
     description: "Données nettoyées de la note de satisfaction des usagers sur certaines lignes"
   - name: stg_liste_transporteurs_clean
