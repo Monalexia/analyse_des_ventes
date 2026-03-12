@@ -131,8 +131,8 @@ models:
       - name: id_arret
         tests:
           - not_null
-  - name: table_prévisions_fer
+  - name: table_previsions_fer
     description: "Table pour intégration dans Jupyter pour entrainer les modèles de ML"
-  - name: table_prévisions_surface
+  - name: table_previsions_surface
     description: "Table pour intégration dans Jupyter pour entrainer les modèles de ML"
   
